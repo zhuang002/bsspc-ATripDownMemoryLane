@@ -1,2 +1,0 @@
-atripdownmemorylane.ATripDownMemoryLane
-atripdownmemorylane.Friend
