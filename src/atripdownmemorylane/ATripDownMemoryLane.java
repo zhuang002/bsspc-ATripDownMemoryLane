@@ -166,6 +166,7 @@ class Graph {
 
         for (int neighbour:neighbours) {
             // loop over all child nodes, which means we will get route from node1 to node 2 through node1's child nodes.
+            if (neighbour==node2) continue; // exclude the destiny.
             int distance1=getShortestRoute(node1,neighbour); // Get the shortest distance from node1 to neighbour.
             int distance2=getShortestRoute(neighbour,node2); // Get the shortest distance from neighbour to node2.
             int routeDistance = sumDistance(distance1,distance2); //Add up to get shortest distance from node1 to node2 through neighbour.
@@ -217,7 +218,7 @@ class Graph {
         //If either of distance is -1 which means not connected, the node1 and node 2 are not connected. 
         if (distance1==-1 || distance2==-1) return -1;
         // return the larger distance (the time that 2 persons are connected.)
-        return (distance1<distance2)?distance2:distance2;
+        return (distance1<distance2)?distance2:distance1;
     }
 
     /**
